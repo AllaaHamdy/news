@@ -66,7 +66,7 @@
         <div class="col-md-12 col-xs-8">
           <div class="checkbox ">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox" name="remember_me"> Remember Me
             </label>
           </div>
         </div>

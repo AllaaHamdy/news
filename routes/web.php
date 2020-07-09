@@ -22,10 +22,17 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin'], function () {
 ////news routes
 Route::get('create-new','NewsController@create'); 
 Route::post('add-new','NewsController@store'); 
-    Route::get('lang/{lang}', function ($lang) {
-
-        (session()->has('lang'))?session()->forget('lang'):'';
-        ($lang=='ar')?session()->put('lang','ar'):session()->put('lang','en');
-        return back();
-    });
+Route::get('lang/{lang}', function ($lang) {
+    (session()->has('lang'))?session()->forget('lang'):'';
+     ($lang=='ar')?session()->put('lang','ar'):session()->put('lang','en');
+     return back();
+ });
 });
+////front routes
+Route::get('lang/{lang}', function ($lang) {
+   (session()->has('lang'))?session()->forget('lang'):'';
+    ($lang=='ar')?session()->put('lang','ar'):session()->put('lang','en');
+    return back();
+});
+Route::get('/','NewsController@index');
+Route::get('news_profile/{id}','NewsController@show');

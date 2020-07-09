@@ -61,7 +61,7 @@ class NewsController extends Controller
             ]);
             
             if(json_decode($res->body())->status==1){
-                return view('admin/news/create')->with('success_msg','News Addedd Succefully..');
+                return view('admin/news/news_home')->with('success_msg','News Addedd Succefully..');
               // return  redirect(admin_url('home'));
             }else{
                 return view('admin/news/create')->with('error_msg',json_decode($res->body())->msg);
